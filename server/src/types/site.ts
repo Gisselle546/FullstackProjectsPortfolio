@@ -5,4 +5,5 @@ export interface ISite extends Document{
     description: string;
     githuburl: string;
     url: string;
+    images: Array<string>
 }

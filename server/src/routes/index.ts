@@ -7,7 +7,7 @@ const router: Router = Router();
 /// Return Site
 
 router.post('/newsite', newSite);
-router.post('/getsites', getSites);
-router.post('/getsite', getSite);
+router.get('/getsites', getSites);
+router.get('/getsite', getSite);
 
 export default router;

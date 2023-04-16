@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -14,6 +15,18 @@ module.exports = {
       },
       height: {
         '10v': '10vh',
+      },
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+      },
+      flexDirection: {
+        'row-sm': 'row',
+        'col-sm': 'column',
+        'row-md': ['row', {'min-width': '768px'}],
+        'col-md': ['column', {'min-width': '768px'}],
       },
     },
   },

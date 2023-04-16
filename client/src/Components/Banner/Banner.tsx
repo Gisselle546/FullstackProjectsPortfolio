@@ -9,9 +9,9 @@ function Banner() {
         className="h-full w-full bg-cover bg-center relative"
         style={{ backgroundImage: "url('/reig.png')" }}
       >
-        <div className="h-full w-full flex flex-col justify-center items-left mx-8">
-          <h1 className="text-[rgb(25,25,112)] text-5xl font-bold tracking-widest text-stroke text-stroke-white text-white text-[rgb(25,25,112)]" >Scaling Code Heights:</h1>
-          <h3 className="text-[rgb(25,25,112)] text-2xl font-semibold tracking-wide">Gisselle's Dev Endeavors</h3>
+        <div className="h-full w-full flex flex-col justify-center items-left md:mx-8 sm:mx-0">
+          <h1 className=" sm: text-4xl md: text-5xl font-bold tracking-widest text-stroke text-stroke-white text-white mx-2" >Scaling Code Heights:</h1>
+          <h3 className="text-[rgb(25,25,112)] text-2xl font-semibold tracking-wide mx-2 sm: mx-0">Gisselle&apos;s Dev Endeavors</h3>
         </div>
       </div>
     </div>

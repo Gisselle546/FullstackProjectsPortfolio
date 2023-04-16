@@ -10,7 +10,8 @@ const siteSchema: Schema = new Schema(
         },
         description: String,
         githuburl: String,
-        url: String
+        url: String,
+        images:Array<string>
     }
 )
 

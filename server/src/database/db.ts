@@ -9,3 +9,5 @@ const connect_to_db = async() =>{
 }
 
 export {connect_to_db}
+
+mongoose.set('strictQuery', false)
