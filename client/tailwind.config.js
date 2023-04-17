@@ -12,6 +12,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'gradient-custom': "linear-gradient(to right, rgba(108,172,228, 0.4), rgba(108,172,228, 1)), url('/reig.png')",
       },
       height: {
         '10v': '10vh',
@@ -27,6 +28,9 @@ module.exports = {
         'col-sm': 'column',
         'row-md': ['row', {'min-width': '768px'}],
         'col-md': ['column', {'min-width': '768px'}],
+      },
+      skew: {
+        '45': '45deg',
       },
     },
   },
