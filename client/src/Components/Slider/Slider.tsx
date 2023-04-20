@@ -2,10 +2,12 @@ import { useStore } from '@/context/sites';
 import React, {useState, useCallback, useEffect} from 'react'
 import { AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function Slider() {
     const {state, getSites} = useStore();
     const [index, setIndex] = useState(0);
+    const router = useRouter();
  
     
     useEffect(() => {
@@ -49,7 +51,7 @@ function Slider() {
         </div>
             
         <span className='mt-5'>
-            <h1 className='text-2xl text-[rgb(25,25,112)] capitalize '>{currentSite.name}</h1>
+            <h1 className='text-2xl text-[rgb(25,25,112)] capitalize cursor-pointer' onClick={()=>router.push('/explore')}>{currentSite.name}</h1>
             </span>
         </div>
         <button onClick={nextSite}>
