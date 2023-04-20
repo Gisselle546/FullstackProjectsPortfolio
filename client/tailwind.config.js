@@ -9,9 +9,8 @@ module.exports = {
   ],
   safelist: [
     // RegExp to safelist all classes starting with 'bg-'
-    {pattern: /bg-./},
-    {pattern: /text-./},
-    {pattern: /border-./},
+    'header-custom',
+    'gradient-custom'
    
   ],
   
