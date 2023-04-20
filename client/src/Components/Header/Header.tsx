@@ -11,7 +11,7 @@ function Header() {
                 alt="Mountains"
                 src={`/icon.jpeg`}
                 height={65}
-                className="rounded-full cursor-pointer"
+                className={"rounded-full cursor-pointer"}
                 width={65}
                 onClick={() => router.push('/')}
                 />
