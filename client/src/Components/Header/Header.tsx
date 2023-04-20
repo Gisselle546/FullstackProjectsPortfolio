@@ -5,7 +5,7 @@ import Image from 'next/image';
 function Header() {
     const router = useRouter()
     return (
-        <nav className='bg-gradient-to-b from-[rgb(48,37,95)] to-[rgb(187,214,253)] top-0 flex h-10v w-full items-center justify-around z-10 sm:bg-gradient-to-r sm:from-[rgb(48,37,95)] sm:to-[rgb(187,214,253)] sm:h-full sm:w-10v'>
+        <nav className={'bg-gradient-to-b from-[rgb(48,37,95)] to-[rgb(187,214,253)] top-0 flex h-10v w-full items-center justify-around z-10 sm:bg-gradient-to-r sm:from-[rgb(48,37,95)] sm:to-[rgb(187,214,253)] sm:h-full sm:w-10v'}>
             <div className='hidden md:block'>
                 <Image
                 alt="Mountains"
