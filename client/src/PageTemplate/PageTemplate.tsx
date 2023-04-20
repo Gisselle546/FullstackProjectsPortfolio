@@ -16,7 +16,7 @@ function PageTemplate({type='default', children}: PageTemplateProps) {
             return(
                 <>
                  <HomeHeader/>
-                    <div className={"min-h-screen h-auto pt-20 pb-24 sm:pb-32"}>
+                    <div className="min-h-screen h-auto pt-20 pb-24 sm:pb-32">
                         {children}
                     </div>
                 <Footer/>
@@ -26,7 +26,7 @@ function PageTemplate({type='default', children}: PageTemplateProps) {
       return(
         <>
          <Header/>
-                    <div className={"min-h-screen h-auto pt-20 pb-24 sm:pb-32"}>
+                    <div className="min-h-screen h-auto pt-20 pb-24 sm:pb-32">
                         {children}
                     </div>
          <Footer/>
