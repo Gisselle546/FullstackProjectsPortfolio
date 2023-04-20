@@ -12,6 +12,7 @@ module.exports = {
     {pattern: /bg-./},
     {pattern: /text-./},
     {pattern: /border-./},
+   
   ],
   
   theme: {
@@ -20,7 +21,9 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-          'gradient-custom': "linear-gradient(to right, rgba(108,172,228, 0.4), rgba(108,172,228, 1)), url('/reig.png')",
+        'gradient-custom': "linear-gradient(to right, rgba(108,172,228, 0.4), rgba(108,172,228, 1)), url('/reig.png')",
+        'header-custom': 'linear-gradient(to bottom, rgb(48,37,95), rgb(187,214,253))',
+        
       },
       height: {
         '10v': '10vh',
