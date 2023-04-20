@@ -6,6 +6,11 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
+  defaultExtractor: content => [
+    ...(content.match(/[\w-/:]+(?<=\[)/g) || []),
+    ...(content.match(/[\w-/:]+(?<=\])/g) || []),
+    ...(content.match(/[\w-/:]+/g) || [])
+  ],
   theme: {
     extend: {
       backgroundImage: {
