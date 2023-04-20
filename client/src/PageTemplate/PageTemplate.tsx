@@ -26,7 +26,7 @@ function PageTemplate({type='default', children}: PageTemplateProps) {
       return(
         <>
          <Header/>
-                    <div className="min-h-screen h-auto pt-20 pb-24 sm:pb-32">
+                    <div>
                         {children}
                     </div>
          <Footer/>
