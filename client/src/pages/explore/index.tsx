@@ -7,16 +7,18 @@ import ImageHandler from '@/Components/ImageHandler/ImageHandler';
 
 function Explore() {
   const {state, getSites} = useStore()
-
-  console.log(state.sites);
-
-      
+        
   useEffect(() => {
     getSites();
   }, [getSites]);
 
   if (state.sites.length === 0) {
     return <div>Loading...</div>;
+  }
+
+  const handleClick = (data: string) =>{
+
+    window.location.href=data;
   }
 
   return (
@@ -35,11 +37,8 @@ function Explore() {
                       <h1 className='text-lg md:text-2xl capitalize text-[rgb(25,25,112)]'>{site.name}</h1>
                       <p className='text-md md:text-lg text-[rgb(25,25,112)] w-3/4'>{site.description}</p>
                       <div className='flex justify-evenly w-full md:w-3/4'>
-                        <button className="bg-gradient-to-r from-[rgb(48,37,95)] to-[rgb(187,214,253)] capitalize text-white font-bold py-2 px-4 rounded-r">
+                        <button className="bg-gradient-to-r from-[rgb(48,37,95)] to-[rgb(187,214,253)] capitalize text-white font-bold py-2 px-4 rounded-r" onClick={()=>{handleClick(site.url) }}>
                           experience it
-                        </button>
-                        <button className='bg-gradient-to-r from-[rgb(48,37,95)] to-[rgb(187,214,253)] capitalize text-white font-bold py-2 px-4 rounded-r'>
-                          see the code
                         </button>
                       </div>
                     </div>

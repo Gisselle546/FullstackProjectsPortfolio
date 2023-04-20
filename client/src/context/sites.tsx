@@ -61,7 +61,7 @@ export const SiteProvider = (props: {children: any}) => {
       const sites = response.data;
       dispatch({ type: ActionType.GETSITES, payload: sites });
     } catch (error) {
-      console.log('Error fetching sites:', error);
+      throw(error)
     }
   }, []);
 
