@@ -7,6 +7,10 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
+  safelist: [
+    // RegExp to safelist all classes starting with 'bg-'
+    /^bg-/,
+  ],
   
   theme: {
     extend: {
