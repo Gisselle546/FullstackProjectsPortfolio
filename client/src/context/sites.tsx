@@ -1,11 +1,13 @@
-import { Site } from '@/types/site';
-import customFetch from '@/utils/axios';
-import React, { createContext, useReducer, useEffect, useContext, useCallback } from 'react';
+import type { Site } from "../types/site";
+import customFetch from "../utils/axios";
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  useCallback,
+} from "react";
 
-enum ActionType {
-  GETSITES = 'GETSITES',
-  GETSITE = 'GETSITE',
-}
+type ActionType = "GETSITES" | "GETSITE";
 
 const initialState: State = {
   sites: [],
@@ -22,14 +24,17 @@ interface State {
   site: Site;
 }
 
-const reducer: React.Reducer<State, Action> = (state: State, action: Action) => {
+const reducer: React.Reducer<State, Action> = (
+  state: State,
+  action: Action
+) => {
   switch (action.type) {
-    case ActionType.GETSITES:
+    case "GETSITES":
       return {
         ...state,
         sites: action.payload,
       };
-    case ActionType.GETSITE:
+    case "GETSITE":
       return {
         ...state,
         site: action.payload,
@@ -47,7 +52,7 @@ const SiteContext = createContext<{
   getSites: () => {},
 });
 
-export const SiteProvider = (props: {children: any}) => {
+export const SiteProvider = (props: { children: any }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getSites = useCallback(async () => {
@@ -57,17 +62,14 @@ export const SiteProvider = (props: {children: any}) => {
     //   dispatch({ type: ActionType.GETSITES, payload: sites });
     // });
     try {
-      const response = await customFetch.get('/getsites');
+      const response = await customFetch.get("/getsites");
       const sites = response.data;
-      dispatch({ type: ActionType.GETSITES, payload: sites });
+      dispatch({ type: "GETSITES", payload: sites });
     } catch (error) {
-      throw(error)
+      throw error;
     }
   }, []);
 
-  
-
-  
   return (
     <SiteContext.Provider value={{ state, getSites }}>
       {props.children}
