@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import devrigUrl from "../assets/hero-art-devrig.svg?url";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -158,16 +159,15 @@ const Home: React.FC = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                data-hero="cta"
-                href="#projects"
+              <Link
+                to="/projects"
                 className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-medium text-white ring-1 ring-sky-700/20 transition hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-slate-900"
               >
                 View Projects
                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden>
                   <path fill="currentColor" d="M13 5l7 7-7 7v-4H4v-6h9V5z" />
                 </svg>
-              </a>
+              </Link>
               <a
                 data-hero="cta"
                 href="/resume.pdf"
