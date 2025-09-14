@@ -1,5 +1,3 @@
-// Spinner.tsx
-
 type SpinnerProps = {
   /** 'sm' | 'md' | 'lg' or a pixel number (e.g. 28) */
   size?: "sm" | "md" | "lg" | number;
