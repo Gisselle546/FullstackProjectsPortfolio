@@ -6,6 +6,7 @@ import "react-pdf/dist/Page/TextLayer.css";
 
 // ✅ Vite-friendly worker URL (bundled locally)
 import workerSrc from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import Spinner from "../components/Spinner/Spinner";
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
 // Put resume in /public/resume.pdf
@@ -60,7 +61,11 @@ const ResumePage: React.FC = () => {
         <Document
           file={resumeUrl}
           onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-          loading={<div className="p-8 text-slate-300">Loading résumé…</div>}
+          loading={
+            <div className="p-8 text-slate-300">
+              <Spinner size="lg" />
+            </div>
+          }
           error={
             <div className="p-8 text-rose-300">Couldn’t load the PDF.</div>
           }

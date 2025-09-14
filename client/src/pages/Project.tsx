@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useStore } from "../context/sites";
 import type { Site } from "../types/site";
+import Spinner from "../components/Spinner/Spinner";
 
 const Project: React.FC = () => {
   const { state, getSites } = useStore();
@@ -10,7 +11,11 @@ const Project: React.FC = () => {
   }, [getSites]);
 
   if (state.sites.length === 0) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Spinner size="lg" />
+      </div>
+    );
   }
 
   const handleClick = (data: string) => {
