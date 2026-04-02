@@ -1,5 +1,5 @@
-import type { Message } from "yup";
-import customFetch from "../utils/axios";
+import type { Message } from "../types/message";
+import { fetchPost } from "../utils/fetch";
 import React, { createContext, useReducer, useContext } from "react";
 
 type ActionType = "CREATEMESSAGE";
@@ -19,13 +19,13 @@ interface State {
 
 const reducer: React.Reducer<State, Action> = (
   state: State,
-  action: Action
+  action: Action,
 ) => {
   switch (action.type) {
     case "CREATEMESSAGE":
       return {
         ...state,
-        sites: action.payload,
+        messages: action.payload,
       };
     default:
       throw new Error();
@@ -45,9 +45,9 @@ export const MessageProvider = (props: { children: any }) => {
 
   const createMessage = async (data: any) => {
     try {
-      const response = await customFetch.post("/newmessage", data);
-      dispatch({ type: "CREATEMESSAGE", payload: response.data });
-      return response.data;
+      const result = await fetchPost<Message>("/newmessage", data);
+      dispatch({ type: "CREATEMESSAGE", payload: result });
+      return result;
     } catch (error) {
       throw new Error();
     }

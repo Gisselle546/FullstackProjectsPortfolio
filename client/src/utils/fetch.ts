@@ -1,0 +1,19 @@
+const BASE_URL = import.meta.env.PROD
+  ? "https://fullstackprojectsportfolio-production.up.railway.app/api/v1"
+  : "http://localhost:4000/api/v1";
+
+export async function fetchGet<T>(path: string): Promise<T> {
+  const res = await fetch(`${BASE_URL}${path}`);
+  if (!res.ok) throw new Error(`GET ${path} failed: ${res.status}`);
+  return res.json();
+}
+
+export async function fetchPost<T>(path: string, body: unknown): Promise<T> {
+  const res = await fetch(`${BASE_URL}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`POST ${path} failed: ${res.status}`);
+  return res.json();
+}

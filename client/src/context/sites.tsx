@@ -1,5 +1,5 @@
 import type { Site } from "../types/site";
-import customFetch from "../utils/axios";
+import { fetchGet } from "../utils/fetch";
 import React, {
   createContext,
   useReducer,
@@ -26,7 +26,7 @@ interface State {
 
 const reducer: React.Reducer<State, Action> = (
   state: State,
-  action: Action
+  action: Action,
 ) => {
   switch (action.type) {
     case "GETSITES":
@@ -62,8 +62,7 @@ export const SiteProvider = (props: { children: any }) => {
     //   dispatch({ type: ActionType.GETSITES, payload: sites });
     // });
     try {
-      const response = await customFetch.get("/getsites");
-      const sites = response.data;
+      const sites = await fetchGet<Site[]>("/getsites");
       dispatch({ type: "GETSITES", payload: sites });
     } catch (error) {
       throw error;
