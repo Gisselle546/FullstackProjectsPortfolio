@@ -1,9 +1,7 @@
 import axios from "axios";
 
-export const isProduction = () => process.env.NODE_ENV === "production";
-
 const customFetch = axios.create({
-  baseURL: isProduction()
+  baseURL: import.meta.env.PROD
     ? "https://fullstackprojectsportfolio-production.up.railway.app/api/v1"
     : "http://localhost:4000/api/v1",
 });
