@@ -10,7 +10,11 @@ const PORT: string | number = process.env.PORT || 4000;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://gisselleapp.vercel.app", "http://localhost:5173"],
+    origin: [
+      "https://gisselleapp.vercel.app",
+      "http://localhost:5173",
+      "https://gisselleworks.netlify.app",
+    ],
   }),
 );
 
